@@ -19,17 +19,17 @@ public class Functions
 
     public static Quest RandomQuest(int id, string vName) // id-> Villager ID vName -> Villager Name
     {
-        int reqCount=Random.Range(1, 10);
-        int rewCount=Random.Range(1, 10);
+        int reqCount=Random.Range(1, 10);  // requirement quantity
+        int rewCount=Random.Range(1, 10);  // reward quantity
         Item requirement=RandomItem(reqCount);
         Item reward=RandomItem(rewCount);
         
 
-        if(reward.Type==requirement.Type)
+        if(reward.Type==requirement.Type)  // If they are the same it won't make any sense
         {
             return RandomQuest(id, vName);
         }
-        if(((reward.Value*rewCount) <= (requirement.Value*reqCount)) || ((reward.Value*rewCount) > (requirement.Value*reqCount*5)))
+        if(((reward.Value*rewCount) <= (requirement.Value*reqCount)) || ((reward.Value*rewCount) > (requirement.Value*reqCount*5))) // Value is the price of the item
         {
             return RandomQuest(id, vName);
         }
