@@ -36,7 +36,7 @@ public class Functions
         string qName="Bring "+requirement.Name;  // Quest name
         string description="You have promised some "+requirement.Name+" to "+vName;
 
-        var quest= new FindQuest(requirement, reward, id, vName, qName, description);
+        var quest= new FindQuest(requirement, reward, id, vName, qName, description);  //Items has their quantity in their classes
         quest.Town=TownManager.CurrentVillage.Town; // Quest location
         return quest;
     }
